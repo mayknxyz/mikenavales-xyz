@@ -219,16 +219,12 @@
     }
 
     .full {
-        padding: 10px 32px 10px 32px;
+        padding: 10px 50px 10px 50px;
         border: 1px solid red;
-        
-
     }
 
-    input[type="text"] {
+    textarea, input[type="text"] {
         width: 100%;
-    }
-
-    .center {
-        text-align: center;
+        border-radius: 8px;
+        padding: 8px;
     }
