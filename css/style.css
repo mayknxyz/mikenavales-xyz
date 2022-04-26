@@ -217,3 +217,18 @@
         justify-content: flex-end;
         padding-right: 1rem;
     }
+
+    .full {
+        padding: 10px 32px 10px 32px;
+        border: 1px solid red;
+        
+
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+
+    .center {
+        text-align: center;
+    }
