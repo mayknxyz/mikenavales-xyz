@@ -1,0 +1,73 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import '../styles/global.css';
+import '../styles/tailwind.css';
+import { projects } from '../data/projects';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Projects | Mike Navales" description="Explore my projects and work" />
+	</head>
+	<body class="bg-black text-white">
+		<Header />
+		<main class="w-full bg-black">
+			<div class="max-w-[1920px] mx-auto px-2 py-8">
+				<section class="mb-12 px-2 text-center">
+					<h1 class="text-3xl md:text-4xl font-bold mb-4">/projects</h1>
+					<p class="text-base md:text-lg text-gray-300 mb-8">...never ending exploration</p>
+				</section>
+				
+				<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-2 justify-items-center">
+					{projects.map((project) => (
+						<div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:transform hover:scale-105 hover:shadow-[0_5px_15px_-5px_rgba(255,255,255,0.2)] hover:-translate-y-2 w-full max-w-sm group">
+							<a href={`/mikenavales-xyz${project.link}`} class="block">
+								<div class="relative h-40 overflow-hidden">
+									<div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-300 z-10"></div>
+									<img 
+										src={project.image} 
+										alt={project.title} 
+										class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+										loading="lazy"
+										width="800"
+										height="600"
+										fetchpriority="low"
+										decoding="async"
+									/>
+								</div>
+								<div class="p-4 transition-colors duration-300 group-hover:bg-gray-800">
+									<h2 class="text-lg md:text-xl font-bold mb-2 text-center group-hover:text-blue-400 transition-colors duration-300">{project.title}</h2>
+									<p class="text-gray-300 text-sm md:text-base mb-3 line-clamp-2 group-hover:text-gray-200 transition-colors duration-300">{project.description}</p>
+									<div class="flex flex-wrap gap-1 justify-center">
+										{project.tags.map((tag) => (
+											<span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded-full text-xs group-hover:bg-blue-800 transition-colors duration-300">
+												{tag}
+											</span>
+										))}
+									</div>
+								</div>
+							</a>
+						</div>
+					))}
+				</section>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	/* Remove underline on project cards */
+	.bg-gray-900 a:hover {
+		text-decoration: none;
+	}
+	
+	/* Add a subtle white glow effect on hover */
+	.bg-gray-900:hover {
+		box-shadow: 0 5px 15px -5px rgba(255, 255, 255, 0.2), 0 0 10px rgba(255, 255, 255, 0.1);
+	}
+</style> 

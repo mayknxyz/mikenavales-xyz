@@ -1,0 +1,99 @@
+# Blog Post Guide
+
+This guide explains how to create and manage blog posts in this Astro-based portfolio website.
+
+## Creating a New Blog Post
+
+1. Create a new `.md` file in the `src/content/blog` directory
+2. Use the following frontmatter template:
+
+```markdown
+---
+title: "Your Post Title"
+description: "A brief description of your post"
+pubDate: "2024-03-21"
+heroImage: "/images/blog/your-image.jpg"
+tags: ["category1", "category2"]
+---
+
+Your blog post content here...
+```
+
+### Frontmatter Fields
+
+- `title`: The title of your blog post
+- `description`: A brief summary of your post (used in previews)
+- `pubDate`: Publication date in YYYY-MM-DD format
+- `heroImage`: Path to the hero image (relative to the `public` directory)
+- `tags`: Array of categories/tags for the post
+
+## Managing Categories
+
+Categories are automatically generated from the `tags` field in your blog posts' frontmatter.
+
+### Adding Categories
+
+1. Add tags to your post's frontmatter:
+
+```markdown
+tags: ["Web Development", "JavaScript", "Astro"]
+```
+
+2. Categories will automatically appear in the sidebar
+
+### Best Practices for Categories
+
+- Use consistent naming (e.g., "Web Development" vs "web-development")
+- Keep categories broad and meaningful
+- Use 2-3 categories per post maximum
+- Consider using existing categories before creating new ones
+
+## Adding Images
+
+1. Place your images in the `public/images/blog` directory
+2. Reference them in your frontmatter:
+
+```markdown
+heroImage: "/images/blog/your-image.jpg"
+```
+
+### Image Guidelines
+
+- Recommended size: 1200x630 pixels
+- Format: JPG or PNG
+- Max file size: 500KB
+- Use descriptive filenames
+
+## Writing Content
+
+- Use Markdown for formatting
+- Include code blocks with syntax highlighting:
+  ````markdown
+  ```javascript
+  const example = "code here";
+  ```
+  ````
+- Add images within content:
+  ```markdown
+  ![Alt text](/images/blog/content-image.jpg)
+  ```
+
+## Previewing Posts
+
+1. Run the development server:
+
+```bash
+npm run dev
+```
+
+2. Visit `http://localhost:4321/blog` to see your posts
+
+## Deployment
+
+Posts are automatically built and deployed with the site. No additional steps needed!
+
+## Need Help?
+
+- Check the [Astro Content Collections documentation](https://docs.astro.build/en/guides/content-collections/)
+- Review existing posts in this directory for examples
+- Contact the site administrator for assistance

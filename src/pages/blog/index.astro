@@ -1,0 +1,253 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../components/FormattedDate.astro';
+import BlogSearch from '../../components/BlogSearch.astro';
+import { Image } from 'astro:assets';
+import '../../styles/global.css';
+import '../../styles/tailwind.css';
+
+// Get current page from URL query parameter or default to 1
+const currentPage = Astro.url.searchParams.get('page') ? parseInt(Astro.url.searchParams.get('page')) : 1;
+const postsPerPage = 20;
+
+// Get all posts and sort by date
+const allPosts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+// Debug: Log all posts to see their data
+console.log('All posts:', allPosts.map(post => ({
+	id: post.id,
+	title: post.data.title,
+	tags: post.data.tags
+})));
+
+// Calculate pagination
+const totalPosts = allPosts.length;
+const totalPages = Math.ceil(totalPosts / postsPerPage);
+const startIndex = (currentPage - 1) * postsPerPage;
+const endIndex = startIndex + postsPerPage;
+
+// Get posts for current page
+const posts = allPosts.slice(startIndex, endIndex);
+
+// Extract unique tags from all posts
+const allTags = [...new Set(allPosts.flatMap(post => post.data.tags || []))].sort();
+
+// Debug: Log extracted tags
+console.log('Extracted tags:', allTags);
+
+// Generate pagination URLs
+const paginationUrls = {
+	prev: currentPage > 1 ? `?page=${currentPage - 1}` : null,
+	next: currentPage < totalPages ? `?page=${currentPage + 1}` : null,
+	pages: Array.from({ length: totalPages }, (_, i) => ({
+		number: i + 1,
+		url: `?page=${i + 1}`,
+		isCurrent: i + 1 === currentPage
+	}))
+};
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`${SITE_TITLE} - Blog`} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="bg-black text-white">
+		<Header />
+		<main class="w-full bg-black">
+			<div class="max-w-[1920px] mx-auto px-2">
+				<section class="mb-12 px-2 text-center pt-8">
+					<h1 class="text-3xl md:text-4xl font-bold mb-4">/blog</h1>
+					<p class="text-base md:text-lg text-gray-300 mb-8">Thoughts, ideas, and technical insights</p>
+				</section>
+				
+				<!-- Search Section -->
+				<div id="search-container" class="bg-black z-40 px-2 pb-[5px] mb-8" style="position: sticky; top: 0;">
+					<BlogSearch />
+				</div>
+				
+				<div id="content-container" class="flex flex-col md:flex-row gap-8 px-2">
+					<!-- Side Menu -->
+					<aside class="w-full md:w-80 shrink-0 md:sticky h-fit z-30" id="sidebar">
+						<div class="bg-gray-900 rounded-lg p-4">
+							<h2 class="text-lg font-semibold mb-4 px-1">Tags</h2>
+							<ul class="space-y-2">
+								<li>
+									<button 
+										class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors tag-btn active"
+										data-tag="all"
+									>
+										All Posts
+									</button>
+								</li>
+								{allTags.map(tag => (
+									<li>
+										<button 
+											class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors tag-btn"
+											data-tag={tag}
+										>
+											{tag}
+										</button>
+									</li>
+								))}
+							</ul>
+						</div>
+					</aside>
+
+					<!-- Blog Posts List -->
+					<section class="flex-1">
+						<div class="space-y-6 blog-posts-list">
+							{posts.map((post) => (
+								<article class="bg-gray-900 rounded-lg p-6 transition-all duration-300 hover:bg-gray-800 blog-post-item min-h-[200px]" data-tags={post.data.tags?.join(' ') || ''}>
+									<a href={`/mikenavales-xyz/blog/${post.id}/`} class="block h-full">
+										<div class="flex flex-col md:flex-row gap-4 h-full">
+											<div class="md:w-48 h-32 shrink-0">
+												<img 
+													src="/mikenavales-xyz/content/blog/images/project-image.jpg"
+													alt={post.data.title}
+													width={720}
+													height={360}
+													class="w-full h-full object-cover rounded-lg"
+													loading="lazy"
+													decoding="async"
+												/>
+											</div>
+											<div class="flex-1 flex flex-col">
+												<h2 class="text-xl md:text-2xl font-bold mb-2">{post.data.title}</h2>
+												<p class="text-gray-300 text-sm md:text-base mb-3 flex-grow">{post.data.description}</p>
+												<div class="flex flex-col gap-2 mt-auto">
+													<p class="text-gray-400 text-sm">
+														<FormattedDate date={post.data.pubDate} />
+													</p>
+													{post.data.tags && (
+														<div class="flex flex-wrap gap-2">
+															{post.data.tags.map(tag => (
+																<span class="text-xs px-2 py-1 bg-gray-800 rounded-full text-gray-300">
+																	{tag}
+																</span>
+															))}
+														</div>
+													)}
+												</div>
+											</div>
+										</div>
+									</a>
+								</article>
+							))}
+						</div>
+
+						<!-- Pagination -->
+						{totalPages > 1 && (
+							<div class="mt-8 flex justify-center items-center gap-2">
+								{paginationUrls.prev && (
+									<a 
+										href={paginationUrls.prev} 
+										class="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
+									>
+										Previous
+									</a>
+								)}
+								
+								<div class="flex gap-1">
+									{paginationUrls.pages.map(page => (
+										<a 
+											href={page.url} 
+											class={`px-4 py-2 rounded-lg transition-colors ${
+												page.isCurrent 
+													? 'bg-blue-600 text-white' 
+													: 'bg-gray-800 text-white hover:bg-gray-700'
+											}`}
+										>
+											{page.number}
+										</a>
+									))}
+								</div>
+								
+								{paginationUrls.next && (
+									<a 
+										href={paginationUrls.next} 
+										class="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
+									>
+										Next
+									</a>
+								)}
+							</div>
+						)}
+					</section>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<script>
+	// Tag filtering
+	const tagButtons = document.querySelectorAll('.tag-btn');
+	const blogPosts = document.querySelectorAll('.blog-post-item');
+
+	tagButtons.forEach(button => {
+		button.addEventListener('click', () => {
+			// Update active state
+			tagButtons.forEach(btn => btn.classList.remove('active', 'bg-gray-800'));
+			button.classList.add('active', 'bg-gray-800');
+
+			const tag = button.dataset.tag;
+
+			blogPosts.forEach(post => {
+				if (tag === 'all') {
+					post.classList.remove('hidden');
+				} else {
+					const postTags = post.dataset.tags.split(' ');
+					if (postTags.includes(tag)) {
+						post.classList.remove('hidden');
+					} else {
+						post.classList.add('hidden');
+					}
+				}
+			});
+		});
+	});
+
+	// Make search box sticky
+	document.addEventListener('DOMContentLoaded', () => {
+		const header = document.getElementById('main-header');
+		const searchContainer = document.getElementById('search-container');
+		const contentContainer = document.getElementById('content-container');
+		const sidebar = document.getElementById('sidebar');
+		
+		if (header && searchContainer) {
+			// Get the header height
+			const headerHeight = header.offsetHeight;
+			
+			// Set the search container's top position to match the header height
+			searchContainer.style.top = `${headerHeight}px`;
+			
+			// Set a CSS variable for the search height
+			document.documentElement.style.setProperty('--search-height', `${searchContainer.offsetHeight}px`);
+			
+			// Position the sidebar below the search container
+			if (sidebar) {
+				sidebar.style.top = `${headerHeight + searchContainer.offsetHeight}px`;
+			}
+			
+			// Update on window resize
+			window.addEventListener('resize', () => {
+				const newHeaderHeight = header.offsetHeight;
+				searchContainer.style.top = `${newHeaderHeight}px`;
+				document.documentElement.style.setProperty('--search-height', `${searchContainer.offsetHeight}px`);
+				
+				// Update sidebar position on resize
+				if (sidebar) {
+					sidebar.style.top = `${newHeaderHeight + searchContainer.offsetHeight}px`;
+				}
+			});
+		}
+	});
+</script>

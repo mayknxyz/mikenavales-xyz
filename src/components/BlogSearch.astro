@@ -1,0 +1,77 @@
+<div class="search-container mb-8 max-w-xl mx-auto">
+  <div class="relative">
+    <input 
+      type="text" 
+      id="blog-search" 
+      placeholder="Search blog posts..." 
+      class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+    />
+    <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    </div>
+  </div>
+  <div id="no-results" class="mt-4 hidden">
+    <p class="text-gray-400">No results found. Try different keywords.</p>
+  </div>
+</div>
+
+<script>
+  // Get all blog posts from the page
+  const blogPosts = Array.from(document.querySelectorAll('.blog-post-item')).map(item => {
+    return {
+      title: item.querySelector('h2').textContent,
+      description: item.querySelector('p').textContent,
+      link: item.querySelector('a').getAttribute('href'),
+      element: item,
+      tags: item.dataset.tags ? item.dataset.tags.split(' ') : []
+    };
+  });
+
+  // Search functionality
+  const searchInput = document.getElementById('blog-search');
+  const noResults = document.getElementById('no-results');
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase().trim();
+      
+      if (searchTerm.length < 2) {
+        // If search term is too short, show all posts
+        noResults.classList.add('hidden');
+        blogPosts.forEach(post => {
+          post.element.classList.remove('hidden');
+        });
+        return;
+      }
+
+      // Filter posts based on search term
+      const filteredPosts = blogPosts.filter(post => 
+        post.title.toLowerCase().includes(searchTerm) || 
+        post.description.toLowerCase().includes(searchTerm) ||
+        post.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+      );
+
+      // Show/hide posts based on search results
+      if (filteredPosts.length > 0) {
+        noResults.classList.add('hidden');
+        
+        // Hide posts that don't match the search
+        blogPosts.forEach(post => {
+          if (filteredPosts.includes(post)) {
+            post.element.classList.remove('hidden');
+          } else {
+            post.element.classList.add('hidden');
+          }
+        });
+      } else {
+        // No results found
+        noResults.classList.remove('hidden');
+        blogPosts.forEach(post => {
+          post.element.classList.add('hidden');
+        });
+      }
+    });
+  }
+</script> 
