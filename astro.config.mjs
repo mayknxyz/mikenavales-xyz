@@ -7,7 +7,6 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: "https://mayknxyz.github.io",
-  base: "/mikenavales-xyz",
   outDir: "./dist",
   integrations: [mdx(), sitemap(), tailwind()],
   devToolbar: { enabled: false },
