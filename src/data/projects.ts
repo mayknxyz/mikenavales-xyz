@@ -6,8 +6,7 @@ export interface Project {
   link: string;
 }
 
-const basePath = import.meta.env.PROD ? "/mikenavales-xyz" : "";
-const sampleImage = "/mikenavales-xyz/content/blog/images/project-image.jpg";
+const sampleImage = "/content/blog/images/project-image.jpg";
 
 export const projects: Project[] = [
   {
