@@ -6,7 +6,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://mayknxyz.github.io",
+  site: "https://mikenavales-xyz.vercel.app",
   outDir: "./dist",
   integrations: [mdx(), sitemap(), tailwind()],
   devToolbar: { enabled: false },
@@ -14,12 +14,12 @@ export default defineConfig({
     service: {
       entrypoint: "astro/assets/services/sharp",
     },
-    domains: ["mayknxyz.github.io"],
+    domains: ["mikenavales-xyz.vercel.app"],
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "mayknxyz.github.io",
-        pathname: "/mikenavales-xyz/**",
+        hostname: "mikenavales-xyz.vercel.app",
+        pathname: "/**",
       },
     ],
   },
