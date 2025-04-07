@@ -8,7 +8,7 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: "https://mayknxyz.github.io",
   base: "/mikenavales-xyz",
-  outDir: "./docs",
+  outDir: "./dist",
   integrations: [mdx(), sitemap(), tailwind()],
   devToolbar: { enabled: false },
   image: {
