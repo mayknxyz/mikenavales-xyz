@@ -1,9 +1,9 @@
 ---
-title: "Web Performance Optimization: A Complete Guide"
-description: "A comprehensive guide to optimizing web performance, from Core Web Vitals to advanced techniques."
-pubDate: "2024-02-01"
-heroImage: "/blog-placeholder-3.jpg"
-tags: ["performance", "web development", "optimization"]
+title: "Third Post"
+description: "This is the third post of the blog."
+pubDate: "2024-01-03"
+heroImage: "/blog/images/project-image.jpg"
+tags: ["web development", "static sites", "performance"]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.

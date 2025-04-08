@@ -1,8 +1,8 @@
 ---
-title: "Building Responsive Web Applications"
-description: "Learn the best practices for creating responsive web applications that work seamlessly across all devices."
-pubDate: "2024-01-15"
-heroImage: "/blog-placeholder-2.jpg"
+title: "Second Post"
+description: "This is the second post of the blog."
+pubDate: "2024-01-02"
+heroImage: "/blog/images/project-image.jpg"
 tags: ["responsive design", "web development", "css"]
 ---
 

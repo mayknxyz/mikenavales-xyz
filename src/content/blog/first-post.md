@@ -1,8 +1,8 @@
 ---
-title: "Astro: The Modern Static Site Generator"
-description: "A deep dive into Astro, a modern static site generator that offers excellent performance and developer experience."
+title: "First Post"
+description: "This is the first post of the blog."
 pubDate: "2024-01-01"
-heroImage: "/blog-placeholder-1.jpg"
+heroImage: "/blog/images/project-image.jpg"
 tags: ["web development", "static sites", "performance"]
 ---
 
