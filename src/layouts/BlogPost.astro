@@ -18,31 +18,41 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				width: calc(100% - 2em);
 				max-width: 100%;
 				margin: 0;
+				background-color: black;
+				color: white;
 			}
 			.hero-image {
 				width: 100%;
+				max-width: 600px;
+				margin: 0 auto;
 			}
 			.hero-image img {
 				display: block;
 				margin: 0 auto;
 				border-radius: 12px;
 				box-shadow: var(--box-shadow);
+				width: 100%;
+				height: auto;
 			}
 			.prose {
 				width: 720px;
 				max-width: calc(100% - 2em);
 				margin: auto;
 				padding: 1em;
-				color: rgb(var(--gray-dark));
+				color: white;
 			}
 			.title {
 				margin-bottom: 1em;
 				padding: 1em 0;
 				text-align: center;
 				line-height: 1;
+				color: white;
 			}
 			.title h1 {
 				margin: 0 0 0.5em 0;
+				color: white;
+				font-size: 2.5rem;
+				font-weight: bold;
 			}
 			.date {
 				margin-bottom: 0.5em;
@@ -50,16 +60,17 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			}
 			.last-updated-on {
 				font-style: italic;
+				color: rgb(var(--gray));
 			}
 		</style>
 	</head>
 
-	<body>
+	<body class="bg-black text-white">
 		<Header />
 		<main>
 			<article>
 				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
+					{heroImage && <img width={600} height={300} src={heroImage} alt="" />}
 				</div>
 				<div class="prose">
 					<div class="title">
@@ -77,6 +88,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 						<hr />
 					</div>
 					<slot />
+					<div class="mt-12 text-center">
+						<h2 class="text-2xl text-white">Do your best and have fun!</h2>
+					</div>
 				</div>
 			</article>
 		</main>
