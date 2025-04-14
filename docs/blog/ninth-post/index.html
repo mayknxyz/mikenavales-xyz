@@ -1,94 +1,728 @@
-<!DOCTYPE html><html lang="en" data-astro-cid-bvzihdzo> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/mikenavales-xyz/favicon.svg"><link rel="sitemap" href="/mikenavales-xyz/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Mike Navales" href="https://mayknxyz.github.io/rss.xml"><meta name="generator" content="Astro v5.6.1"><!-- Font preloads --><link rel="preload" href="/mikenavales-xyz/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/mikenavales-xyz/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://mayknxyz.github.io/mikenavales-xyz/blog/ninth-post/"><!-- Primary Meta Tags --><title>Web Performance Optimization: A Complete Guide</title><meta name="title" content="Web Performance Optimization: A Complete Guide"><meta name="description" content="Learn essential techniques to improve your website's performance, from image optimization to code splitting and caching strategies."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://mayknxyz.github.io/mikenavales-xyz/blog/ninth-post/"><meta property="og:title" content="Web Performance Optimization: A Complete Guide"><meta property="og:description" content="Learn essential techniques to improve your website's performance, from image optimization to code splitting and caching strategies."><meta property="og:image" content="https://mayknxyz.github.io/mikenavales-xyz/blog-placeholder-1.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://mayknxyz.github.io/mikenavales-xyz/blog/ninth-post/"><meta property="twitter:title" content="Web Performance Optimization: A Complete Guide"><meta property="twitter:description" content="Learn essential techniques to improve your website's performance, from image optimization to code splitting and caching strategies."><meta property="twitter:image" content="https://mayknxyz.github.io/mikenavales-xyz/blog-placeholder-1.jpg"><link rel="stylesheet" href="/mikenavales-xyz/_astro/about.DmvwdYBE.css">
-<style>:root{--accent: #2337ff;--accent-dark: #000d8a;--black: 15, 18, 25;--gray: 96, 115, 159;--gray-light: 229, 233, 240;--gray-dark: 34, 41, 57;--gray-gradient: rgba(var(--gray-light), 50%), #fff;--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);--font-size-base: 1rem;--font-size-sm: .875rem;--font-size-xs: .75rem;--font-size-lg: 1.125rem;--font-size-xl: 1.25rem;--font-size-2xl: 1.5rem;--font-size-3xl: 1.875rem;--font-size-4xl: 2.25rem;--font-size-5xl: 3rem}@font-face{font-family:Atkinson;src:url(/mikenavales-xyz/fonts/atkinson-regular.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:Atkinson;src:url(/mikenavales-xyz/fonts/atkinson-bold.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}body{font-family:Atkinson,sans-serif;margin:0;padding:0;text-align:left;word-wrap:break-word;overflow-wrap:break-word;font-size:var(--font-size-base);line-height:1.5}body.bg-black{background-color:#000;color:#fff}body.bg-black h1,body.bg-black h2,body.bg-black h3,body.bg-black h4,body.bg-black h5,body.bg-black h6{color:#fff}body.bg-black a{color:#4a9eff}body.bg-black a:hover{text-decoration:underline}body.bg-black .blog-post-item a:hover{text-decoration:none}body.bg-black code{background-color:#333;color:#e0e0e0}main{width:720px;max-width:calc(100% - 2em);margin:auto;padding:3em 1em}h1,h2,h3,h4,h5,h6{margin:0 0 .5rem;line-height:1.2}h1{font-size:var(--font-size-4xl)}h2{font-size:var(--font-size-3xl)}h3{font-size:var(--font-size-2xl)}h4{font-size:var(--font-size-xl)}h5{font-size:var(--font-size-lg)}h6{font-size:var(--font-size-base)}strong,b{font-weight:700}a,a:hover{color:var(--accent)}p{margin-bottom:1em;font-size:var(--font-size-base);line-height:1.6}.prose p{margin-bottom:2em}textarea{width:100%;font-size:16px}input{font-size:16px}table{width:100%}img{max-width:100%;height:auto;border-radius:8px}code{padding:2px 5px;background-color:rgb(var(--gray-light));border-radius:2px}pre{padding:1.5em;border-radius:8px}pre>code{all:unset}blockquote{border-left:4px solid var(--accent);padding:0 0 0 20px;margin:0;font-size:1.333em}hr{border:none;border-top:1px solid rgb(var(--gray-light))}@media (max-width: 720px){body{font-size:18px}main{padding:1em}}.sr-only{border:0;padding:0;margin:0;position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);clip-path:inset(50%);white-space:nowrap}html{font-size:16px}h1{line-height:1.2}h2{line-height:1.3}h3,h4,h5,h6{line-height:1.4}.text-sm{font-size:var(--font-size-sm)}.text-xs{font-size:var(--font-size-xs)}.text-lg{font-size:var(--font-size-lg)}.text-xl{font-size:var(--font-size-xl)}@media (max-width: 768px){:root{--font-size-4xl: 2rem;--font-size-3xl: 1.75rem;--font-size-2xl: 1.5rem;--font-size-xl: 1.25rem;--font-size-lg: 1.125rem}}@media (max-width: 480px){:root{--font-size-4xl: 1.75rem;--font-size-3xl: 1.5rem;--font-size-2xl: 1.25rem;--font-size-xl: 1.125rem;--font-size-lg: 1rem}}
-</style>
-<link rel="stylesheet" href="/mikenavales-xyz/_astro/_slug_.DJPhDpjb.css">
-<style>main[data-astro-cid-bvzihdzo]{width:calc(100% - 2em);max-width:100%;margin:0}.hero-image[data-astro-cid-bvzihdzo]{width:100%}.hero-image[data-astro-cid-bvzihdzo] img[data-astro-cid-bvzihdzo]{display:block;margin:0 auto;border-radius:12px;box-shadow:var(--box-shadow)}.prose[data-astro-cid-bvzihdzo]{width:720px;max-width:calc(100% - 2em);margin:auto;padding:1em;color:rgb(var(--gray-dark))}.title[data-astro-cid-bvzihdzo]{margin-bottom:1em;padding:1em 0;text-align:center;line-height:1}.title[data-astro-cid-bvzihdzo] h1[data-astro-cid-bvzihdzo]{margin:0 0 .5em}.date[data-astro-cid-bvzihdzo]{margin-bottom:.5em;color:rgb(var(--gray))}.last-updated-on[data-astro-cid-bvzihdzo]{font-style:italic}
-</style></head> <body data-astro-cid-bvzihdzo> <header class="bg-black text-white py-1 sticky top-0 z-50 shadow-md transition-all duration-300" id="main-header" data-astro-cid-3ef6ksr2> <div class="max-w-[1920px] mx-auto px-4" data-astro-cid-3ef6ksr2> <nav class="grid items-center gap-0" style="display: grid; grid-template-columns: 2.5fr 5fr 2.5fr;" data-astro-cid-3ef6ksr2> <!-- Logo Section --> <div class="py-0 px-2 rounded-l" data-astro-cid-3ef6ksr2> <a href="/mikenavales-xyz/" class="hover:opacity-80 transition-opacity inline-block h-full" data-astro-cid-3ef6ksr2> <img src="/mikenavales-xyz/cropped-20200727-v2-2560x1440-transparent-logo-banner-mikenavales-xyz-1-300x100.png" alt="Mike Navales - Web Developer" width="250" height="83" class="h-[50px] w-auto object-contain" data-astro-cid-3ef6ksr2> </a> </div> <!-- Navigation Links --> <div id="nav-links" class="hidden md:flex gap-6 justify-center p-0" data-astro-cid-3ef6ksr2> <a href="/mikenavales-xyz/projects" class="hover:text-gray-300 transition-colors relative pl-5 before:content-['/'] before:absolute before:left-0 before:text-gray-500 before:text-xl text-xl hover:before:text-white hover:scale-105 transform duration-200" data-astro-cid-3ef6ksr2>
-projects
-</a> <a href="/mikenavales-xyz/blog" class="hover:text-gray-300 transition-colors relative pl-5 before:content-['/'] before:absolute before:left-0 before:text-gray-500 before:text-xl text-xl hover:before:text-white hover:scale-105 transform duration-200" data-astro-cid-3ef6ksr2>
-blog
-</a> <a href="/mikenavales-xyz/about" class="hover:text-gray-300 transition-colors relative pl-5 before:content-['/'] before:absolute before:left-0 before:text-gray-500 before:text-xl text-xl hover:before:text-white hover:scale-105 transform duration-200" data-astro-cid-3ef6ksr2>
-about
-</a> <a href="/mikenavales-xyz/connect" class="hover:text-gray-300 transition-colors relative pl-5 before:content-['/'] before:absolute before:left-0 before:text-gray-500 before:text-xl text-xl hover:before:text-white hover:scale-105 transform duration-200" data-astro-cid-3ef6ksr2>
-connect
-</a> </div> <!-- Social Links --> <div class="flex justify-end p-0 rounded-r" data-astro-cid-3ef6ksr2> <div class="social-links hidden md:flex" data-astro-cid-3ef6ksr2> <a href="https://github.com/mayknxyz" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Go to Mike's GitHub repo</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/github" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-3ef6ksr2></path></svg> </a> <a href="https://www.linkedin.com/in/mikenavales" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Connect with Mike on LinkedIn</span> <svg viewBox="0 0 24 24" aria-hidden="true" width="32" height="32" astro-icon="social/linkedin" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" data-astro-cid-3ef6ksr2></path></svg> </a> </div> <!-- Hamburger Menu Button (visible on small screens) --> <button id="hamburger-menu" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu" data-astro-cid-3ef6ksr2> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> </button> </div> </nav> <!-- Mobile Navigation Menu (hidden by default) --> <div id="mobile-menu" class="hidden md:hidden mt-1 pb-1" data-astro-cid-3ef6ksr2> <div class="flex flex-col space-y-1" data-astro-cid-3ef6ksr2> <a href="/mikenavales-xyz/projects" class="hover:text-gray-300 transition-colors relative pl-5 before:content-['/'] before:absolute before:left-0 before:text-gray-500 before:text-xl text-xl" data-astro-cid-3ef6ksr2>
-projects
-</a> <a href="/mikenavales-xyz/blog" class="hover:text-gray-300 transition-colors relative pl-5 before:content-['/'] before:absolute before:left-0 before:text-gray-500 before:text-xl text-xl" data-astro-cid-3ef6ksr2>
-blog
-</a> <a href="/mikenavales-xyz/about" class="hover:text-gray-300 transition-colors relative pl-5 before:content-['/'] before:absolute before:left-0 before:text-gray-500 before:text-xl text-xl" data-astro-cid-3ef6ksr2>
-about
-</a> <a href="/mikenavales-xyz/connect" class="hover:text-gray-300 transition-colors relative pl-5 before:content-['/'] before:absolute before:left-0 before:text-gray-500 before:text-xl text-xl" data-astro-cid-3ef6ksr2>
-connect
-</a> <div class="flex space-x-4 pt-1" data-astro-cid-3ef6ksr2> <a href="https://github.com/mayknxyz" target="_blank" class="text-gray-300 hover:text-white" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Go to Mike's GitHub repo</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="24" height="24" astro-icon="social/github" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-3ef6ksr2></path></svg> </a> <a href="https://www.linkedin.com/in/mikenavales" target="_blank" class="text-gray-300 hover:text-white" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Connect with Mike on LinkedIn</span> <svg viewBox="0 0 24 24" aria-hidden="true" width="24" height="24" astro-icon="social/linkedin" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" data-astro-cid-3ef6ksr2></path></svg> </a> </div> </div> </div> </div> </header> <script type="module">document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("hamburger-menu"),n=document.getElementById("mobile-menu");e&&n&&e.addEventListener("click",()=>{n.classList.toggle("hidden");const t=!n.classList.contains("hidden");e.innerHTML=t?`<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<!doctype html>
+<html lang="en" data-astro-cid-bvzihdzo>
+  <head>
+    <!-- Global Metadata -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/mikenavales-xyz/favicon.svg" />
+    <link rel="sitemap" href="/mikenavales-xyz/sitemap-index.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Mike Navales"
+      href="https://mayknxyz.github.io/rss.xml"
+    />
+    <meta name="generator" content="Astro v5.6.1" />
+    <!-- Font preloads -->
+    <link
+      rel="preload"
+      href="/mikenavales-xyz/fonts/atkinson-regular.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/mikenavales-xyz/fonts/atkinson-bold.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <!-- Canonical URL -->
+    <link
+      rel="canonical"
+      href="https://mayknxyz.github.io/mikenavales-xyz/blog/ninth-post/"
+    />
+    <!-- Primary Meta Tags -->
+    <title>Web Performance Optimization: A Complete Guide</title>
+    <meta
+      name="title"
+      content="Web Performance Optimization: A Complete Guide"
+    />
+    <meta
+      name="description"
+      content="Learn essential techniques to improve your website's performance, from image optimization to code splitting and caching strategies."
+    />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://mayknxyz.github.io/mikenavales-xyz/blog/ninth-post/"
+    />
+    <meta
+      property="og:title"
+      content="Web Performance Optimization: A Complete Guide"
+    />
+    <meta
+      property="og:description"
+      content="Learn essential techniques to improve your website's performance, from image optimization to code splitting and caching strategies."
+    />
+    <meta
+      property="og:image"
+      content="https://mayknxyz.github.io/mikenavales-xyz/blog-placeholder-1.jpg"
+    />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://mayknxyz.github.io/mikenavales-xyz/blog/ninth-post/"
+    />
+    <meta
+      property="twitter:title"
+      content="Web Performance Optimization: A Complete Guide"
+    />
+    <meta
+      property="twitter:description"
+      content="Learn essential techniques to improve your website's performance, from image optimization to code splitting and caching strategies."
+    />
+    <meta
+      property="twitter:image"
+      content="https://mayknxyz.github.io/mikenavales-xyz/blog-placeholder-1.jpg"
+    />
+    <link rel="stylesheet" href="/mikenavales-xyz/_astro/about.DmvwdYBE.css" />
+    <style>
+      :root {
+        --accent: #2337ff;
+        --accent-dark: #000d8a;
+        --black: 15, 18, 25;
+        --gray: 96, 115, 159;
+        --gray-light: 229, 233, 240;
+        --gray-dark: 34, 41, 57;
+        --gray-gradient: rgba(var(--gray-light), 50%), #fff;
+        --box-shadow:
+          0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
+          0 16px 32px rgba(var(--gray), 33%);
+        --font-size-base: 1rem;
+        --font-size-sm: 0.875rem;
+        --font-size-xs: 0.75rem;
+        --font-size-lg: 1.125rem;
+        --font-size-xl: 1.25rem;
+        --font-size-2xl: 1.5rem;
+        --font-size-3xl: 1.875rem;
+        --font-size-4xl: 2.25rem;
+        --font-size-5xl: 3rem;
+      }
+      @font-face {
+        font-family: Atkinson;
+        src: url(/mikenavales-xyz/fonts/atkinson-regular.woff) format('woff');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Atkinson;
+        src: url(/mikenavales-xyz/fonts/atkinson-bold.woff) format('woff');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+      body {
+        font-family: Atkinson, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        font-size: var(--font-size-base);
+        line-height: 1.5;
+      }
+      body.bg-black {
+        background-color: #000;
+        color: #fff;
+      }
+      body.bg-black h1,
+      body.bg-black h2,
+      body.bg-black h3,
+      body.bg-black h4,
+      body.bg-black h5,
+      body.bg-black h6 {
+        color: #fff;
+      }
+      body.bg-black a {
+        color: #4a9eff;
+      }
+      body.bg-black a:hover {
+        text-decoration: underline;
+      }
+      body.bg-black .blog-post-item a:hover {
+        text-decoration: none;
+      }
+      body.bg-black code {
+        background-color: #333;
+        color: #e0e0e0;
+      }
+      main {
+        width: 720px;
+        max-width: calc(100% - 2em);
+        margin: auto;
+        padding: 3em 1em;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0 0 0.5rem;
+        line-height: 1.2;
+      }
+      h1 {
+        font-size: var(--font-size-4xl);
+      }
+      h2 {
+        font-size: var(--font-size-3xl);
+      }
+      h3 {
+        font-size: var(--font-size-2xl);
+      }
+      h4 {
+        font-size: var(--font-size-xl);
+      }
+      h5 {
+        font-size: var(--font-size-lg);
+      }
+      h6 {
+        font-size: var(--font-size-base);
+      }
+      strong,
+      b {
+        font-weight: 700;
+      }
+      a,
+      a:hover {
+        color: var(--accent);
+      }
+      p {
+        margin-bottom: 1em;
+        font-size: var(--font-size-base);
+        line-height: 1.6;
+      }
+      .prose p {
+        margin-bottom: 2em;
+      }
+      textarea {
+        width: 100%;
+        font-size: 16px;
+      }
+      input {
+        font-size: 16px;
+      }
+      table {
+        width: 100%;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+      code {
+        padding: 2px 5px;
+        background-color: rgb(var(--gray-light));
+        border-radius: 2px;
+      }
+      pre {
+        padding: 1.5em;
+        border-radius: 8px;
+      }
+      pre > code {
+        all: unset;
+      }
+      blockquote {
+        border-left: 4px solid var(--accent);
+        padding: 0 0 0 20px;
+        margin: 0;
+        font-size: 1.333em;
+      }
+      hr {
+        border: none;
+        border-top: 1px solid rgb(var(--gray-light));
+      }
+      @media (max-width: 720px) {
+        body {
+          font-size: 18px;
+        }
+        main {
+          padding: 1em;
+        }
+      }
+      .sr-only {
+        border: 0;
+        padding: 0;
+        margin: 0;
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        clip-path: inset(50%);
+        white-space: nowrap;
+      }
+      html {
+        font-size: 16px;
+      }
+      h1 {
+        line-height: 1.2;
+      }
+      h2 {
+        line-height: 1.3;
+      }
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.4;
+      }
+      .text-sm {
+        font-size: var(--font-size-sm);
+      }
+      .text-xs {
+        font-size: var(--font-size-xs);
+      }
+      .text-lg {
+        font-size: var(--font-size-lg);
+      }
+      .text-xl {
+        font-size: var(--font-size-xl);
+      }
+      @media (max-width: 768px) {
+        :root {
+          --font-size-4xl: 2rem;
+          --font-size-3xl: 1.75rem;
+          --font-size-2xl: 1.5rem;
+          --font-size-xl: 1.25rem;
+          --font-size-lg: 1.125rem;
+        }
+      }
+      @media (max-width: 480px) {
+        :root {
+          --font-size-4xl: 1.75rem;
+          --font-size-3xl: 1.5rem;
+          --font-size-2xl: 1.25rem;
+          --font-size-xl: 1.125rem;
+          --font-size-lg: 1rem;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="/mikenavales-xyz/_astro/_slug_.DJPhDpjb.css" />
+    <style>
+      main[data-astro-cid-bvzihdzo] {
+        width: calc(100% - 2em);
+        max-width: 100%;
+        margin: 0;
+      }
+      .hero-image[data-astro-cid-bvzihdzo] {
+        width: 100%;
+      }
+      .hero-image[data-astro-cid-bvzihdzo] img[data-astro-cid-bvzihdzo] {
+        display: block;
+        margin: 0 auto;
+        border-radius: 12px;
+        box-shadow: var(--box-shadow);
+      }
+      .prose[data-astro-cid-bvzihdzo] {
+        width: 720px;
+        max-width: calc(100% - 2em);
+        margin: auto;
+        padding: 1em;
+        color: rgb(var(--gray-dark));
+      }
+      .title[data-astro-cid-bvzihdzo] {
+        margin-bottom: 1em;
+        padding: 1em 0;
+        text-align: center;
+        line-height: 1;
+      }
+      .title[data-astro-cid-bvzihdzo] h1[data-astro-cid-bvzihdzo] {
+        margin: 0 0 0.5em;
+      }
+      .date[data-astro-cid-bvzihdzo] {
+        margin-bottom: 0.5em;
+        color: rgb(var(--gray));
+      }
+      .last-updated-on[data-astro-cid-bvzihdzo] {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body data-astro-cid-bvzihdzo>
+    <header
+      class="sticky top-0 z-50 bg-black py-1 text-white shadow-md transition-all duration-300"
+      id="main-header"
+      data-astro-cid-3ef6ksr2
+    >
+      <div class="mx-auto max-w-[1920px] px-4" data-astro-cid-3ef6ksr2>
+        <nav
+          class="grid items-center gap-0"
+          style="display: grid; grid-template-columns: 2.5fr 5fr 2.5fr"
+          data-astro-cid-3ef6ksr2
+        >
+          <!-- Logo Section -->
+          <div class="rounded-l px-2 py-0" data-astro-cid-3ef6ksr2>
+            <a
+              href="/mikenavales-xyz/"
+              class="inline-block h-full transition-opacity hover:opacity-80"
+              data-astro-cid-3ef6ksr2
+            >
+              <img
+                src="/mikenavales-xyz/cropped-20200727-v2-2560x1440-transparent-logo-banner-mikenavales-xyz-1-300x100.png"
+                alt="Mike Navales - Web Developer"
+                width="250"
+                height="83"
+                class="h-[50px] w-auto object-contain"
+                data-astro-cid-3ef6ksr2
+              />
+            </a>
+          </div>
+          <!-- Navigation Links -->
+          <div
+            id="nav-links"
+            class="hidden justify-center gap-6 p-0 md:flex"
+            data-astro-cid-3ef6ksr2
+          >
+            <a
+              href="/mikenavales-xyz/projects"
+              class="relative transform pl-5 text-xl transition-colors duration-200 before:absolute before:left-0 before:text-xl before:text-gray-500 before:content-['/'] hover:scale-105 hover:text-gray-300 hover:before:text-white"
+              data-astro-cid-3ef6ksr2
+            >
+              projects
+            </a>
+            <a
+              href="/mikenavales-xyz/blog"
+              class="relative transform pl-5 text-xl transition-colors duration-200 before:absolute before:left-0 before:text-xl before:text-gray-500 before:content-['/'] hover:scale-105 hover:text-gray-300 hover:before:text-white"
+              data-astro-cid-3ef6ksr2
+            >
+              blog
+            </a>
+            <a
+              href="/mikenavales-xyz/about"
+              class="relative transform pl-5 text-xl transition-colors duration-200 before:absolute before:left-0 before:text-xl before:text-gray-500 before:content-['/'] hover:scale-105 hover:text-gray-300 hover:before:text-white"
+              data-astro-cid-3ef6ksr2
+            >
+              about
+            </a>
+            <a
+              href="/mikenavales-xyz/connect"
+              class="relative transform pl-5 text-xl transition-colors duration-200 before:absolute before:left-0 before:text-xl before:text-gray-500 before:content-['/'] hover:scale-105 hover:text-gray-300 hover:before:text-white"
+              data-astro-cid-3ef6ksr2
+            >
+              connect
+            </a>
+          </div>
+          <!-- Social Links -->
+          <div class="flex justify-end rounded-r p-0" data-astro-cid-3ef6ksr2>
+            <div class="social-links hidden md:flex" data-astro-cid-3ef6ksr2>
+              <a
+                href="https://github.com/mayknxyz"
+                target="_blank"
+                data-astro-cid-3ef6ksr2
+              >
+                <span class="sr-only" data-astro-cid-3ef6ksr2
+                  >Go to Mike's GitHub repo</span
+                >
+                <svg
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                  width="32"
+                  height="32"
+                  astro-icon="social/github"
+                  data-astro-cid-3ef6ksr2
+                >
+                  <path
+                    fill="currentColor"
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                    data-astro-cid-3ef6ksr2
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/mikenavales"
+                target="_blank"
+                data-astro-cid-3ef6ksr2
+              >
+                <span class="sr-only" data-astro-cid-3ef6ksr2
+                  >Connect with Mike on LinkedIn</span
+                >
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  width="32"
+                  height="32"
+                  astro-icon="social/linkedin"
+                  data-astro-cid-3ef6ksr2
+                >
+                  <path
+                    fill="currentColor"
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    data-astro-cid-3ef6ksr2
+                  ></path>
+                </svg>
+              </a>
+            </div>
+            <!-- Hamburger Menu Button (visible on small screens) -->
+            <button
+              id="hamburger-menu"
+              class="text-white focus:outline-none md:hidden"
+              aria-label="Toggle menu"
+              data-astro-cid-3ef6ksr2
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                data-astro-cid-3ef6ksr2
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                  data-astro-cid-3ef6ksr2
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </nav>
+        <!-- Mobile Navigation Menu (hidden by default) -->
+        <div
+          id="mobile-menu"
+          class="mt-1 hidden pb-1 md:hidden"
+          data-astro-cid-3ef6ksr2
+        >
+          <div class="flex flex-col space-y-1" data-astro-cid-3ef6ksr2>
+            <a
+              href="/mikenavales-xyz/projects"
+              class="relative pl-5 text-xl transition-colors before:absolute before:left-0 before:text-xl before:text-gray-500 before:content-['/'] hover:text-gray-300"
+              data-astro-cid-3ef6ksr2
+            >
+              projects
+            </a>
+            <a
+              href="/mikenavales-xyz/blog"
+              class="relative pl-5 text-xl transition-colors before:absolute before:left-0 before:text-xl before:text-gray-500 before:content-['/'] hover:text-gray-300"
+              data-astro-cid-3ef6ksr2
+            >
+              blog
+            </a>
+            <a
+              href="/mikenavales-xyz/about"
+              class="relative pl-5 text-xl transition-colors before:absolute before:left-0 before:text-xl before:text-gray-500 before:content-['/'] hover:text-gray-300"
+              data-astro-cid-3ef6ksr2
+            >
+              about
+            </a>
+            <a
+              href="/mikenavales-xyz/connect"
+              class="relative pl-5 text-xl transition-colors before:absolute before:left-0 before:text-xl before:text-gray-500 before:content-['/'] hover:text-gray-300"
+              data-astro-cid-3ef6ksr2
+            >
+              connect
+            </a>
+            <div class="flex space-x-4 pt-1" data-astro-cid-3ef6ksr2>
+              <a
+                href="https://github.com/mayknxyz"
+                target="_blank"
+                class="text-gray-300 hover:text-white"
+                data-astro-cid-3ef6ksr2
+              >
+                <span class="sr-only" data-astro-cid-3ef6ksr2
+                  >Go to Mike's GitHub repo</span
+                >
+                <svg
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                  width="24"
+                  height="24"
+                  astro-icon="social/github"
+                  data-astro-cid-3ef6ksr2
+                >
+                  <path
+                    fill="currentColor"
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                    data-astro-cid-3ef6ksr2
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/mikenavales"
+                target="_blank"
+                class="text-gray-300 hover:text-white"
+                data-astro-cid-3ef6ksr2
+              >
+                <span class="sr-only" data-astro-cid-3ef6ksr2
+                  >Connect with Mike on LinkedIn</span
+                >
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  width="24"
+                  height="24"
+                  astro-icon="social/linkedin"
+                  data-astro-cid-3ef6ksr2
+                >
+                  <path
+                    fill="currentColor"
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    data-astro-cid-3ef6ksr2
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <script type="module">
+      document.addEventListener('DOMContentLoaded', () => {
+        const e = document.getElementById('hamburger-menu'),
+          n = document.getElementById('mobile-menu');
+        e &&
+          n &&
+          e.addEventListener('click', () => {
+            n.classList.toggle('hidden');
+            const t = !n.classList.contains('hidden');
+            e.innerHTML = t
+              ? `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-						</svg>`:`<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						</svg>`
+              : `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-						</svg>`})});</script>  <main data-astro-cid-bvzihdzo> <article data-astro-cid-bvzihdzo> <div class="hero-image" data-astro-cid-bvzihdzo> <img width="1020" height="510" src="/project-image.jpg" alt="" data-astro-cid-bvzihdzo> </div> <div class="prose" data-astro-cid-bvzihdzo> <div class="title" data-astro-cid-bvzihdzo> <div class="date" data-astro-cid-bvzihdzo> <time datetime="2024-02-15T00:00:00.000Z"> Feb 15, 2024 </time>  </div> <h1 data-astro-cid-bvzihdzo>Web Performance Optimization: A Complete Guide</h1> <hr data-astro-cid-bvzihdzo> </div>  <h1 id="web-performance-optimization-a-complete-guide">Web Performance Optimization: A Complete Guide</h1>
-<p>Web performance optimization is crucial for providing a better user experience and improving your site’s SEO. This comprehensive guide covers essential techniques and best practices.</p>
-<h2 id="why-performance-matters">Why Performance Matters</h2>
-<p>Performance impacts:</p>
-<ul>
-<li>User experience and satisfaction</li>
-<li>Search engine rankings</li>
-<li>Conversion rates</li>
-<li>Mobile usability</li>
-<li>Bounce rates</li>
-</ul>
-<h2 id="core-web-vitals">Core Web Vitals</h2>
-<p>Google’s Core Web Vitals are key metrics for measuring user experience:</p>
-<h3 id="largest-contentful-paint-lcp">Largest Contentful Paint (LCP)</h3>
-<p>Measures loading performance. Aim for under 2.5 seconds.</p>
-<h3 id="first-input-delay-fid">First Input Delay (FID)</h3>
-<p>Measures interactivity. Aim for under 100 milliseconds.</p>
-<h3 id="cumulative-layout-shift-cls">Cumulative Layout Shift (CLS)</h3>
-<p>Measures visual stability. Aim for under 0.1.</p>
-<h2 id="image-optimization">Image Optimization</h2>
-<h3 id="choose-the-right-format">Choose the Right Format</h3>
-<ul>
-<li>Use WebP with fallbacks</li>
-<li>Consider AVIF for modern browsers</li>
-<li>Use JPEG for photographs</li>
-<li>Use PNG for graphics with transparency</li>
-</ul>
-<h3 id="implement-responsive-images">Implement Responsive Images</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">picture</span><span style="color:#E1E4E8">></span></span>
+						</svg>`;
+          });
+      });
+    </script>
+    <main data-astro-cid-bvzihdzo>
+      <article data-astro-cid-bvzihdzo>
+        <div class="hero-image" data-astro-cid-bvzihdzo>
+          <img
+            width="1020"
+            height="510"
+            src="/project-image.jpg"
+            alt=""
+            data-astro-cid-bvzihdzo
+          />
+        </div>
+        <div class="prose" data-astro-cid-bvzihdzo>
+          <div class="title" data-astro-cid-bvzihdzo>
+            <div class="date" data-astro-cid-bvzihdzo>
+              <time datetime="2024-02-15T00:00:00.000Z"> Feb 15, 2024 </time>
+            </div>
+            <h1 data-astro-cid-bvzihdzo>
+              Web Performance Optimization: A Complete Guide
+            </h1>
+            <hr data-astro-cid-bvzihdzo />
+          </div>
+          <h1 id="web-performance-optimization-a-complete-guide">
+            Web Performance Optimization: A Complete Guide
+          </h1>
+          <p>
+            Web performance optimization is crucial for providing a better user
+            experience and improving your site’s SEO. This comprehensive guide
+            covers essential techniques and best practices.
+          </p>
+          <h2 id="why-performance-matters">Why Performance Matters</h2>
+          <p>Performance impacts:</p>
+          <ul>
+            <li>User experience and satisfaction</li>
+            <li>Search engine rankings</li>
+            <li>Conversion rates</li>
+            <li>Mobile usability</li>
+            <li>Bounce rates</li>
+          </ul>
+          <h2 id="core-web-vitals">Core Web Vitals</h2>
+          <p>
+            Google’s Core Web Vitals are key metrics for measuring user
+            experience:
+          </p>
+          <h3 id="largest-contentful-paint-lcp">
+            Largest Contentful Paint (LCP)
+          </h3>
+          <p>Measures loading performance. Aim for under 2.5 seconds.</p>
+          <h3 id="first-input-delay-fid">First Input Delay (FID)</h3>
+          <p>Measures interactivity. Aim for under 100 milliseconds.</p>
+          <h3 id="cumulative-layout-shift-cls">
+            Cumulative Layout Shift (CLS)
+          </h3>
+          <p>Measures visual stability. Aim for under 0.1.</p>
+          <h2 id="image-optimization">Image Optimization</h2>
+          <h3 id="choose-the-right-format">Choose the Right Format</h3>
+          <ul>
+            <li>Use WebP with fallbacks</li>
+            <li>Consider AVIF for modern browsers</li>
+            <li>Use JPEG for photographs</li>
+            <li>Use PNG for graphics with transparency</li>
+          </ul>
+          <h3 id="implement-responsive-images">Implement Responsive Images</h3>
+          <pre
+            class="astro-code github-dark"
+            style="background-color: #24292e; color: #e1e4e8; overflow-x: auto"
+            tabindex="0"
+            data-language="html"
+          ><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">picture</span><span style="color:#E1E4E8">></span></span>
 <span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">source</span><span style="color:#B392F0"> srcset</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"image.webp"</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"image/webp"</span><span style="color:#E1E4E8"> /></span></span>
 <span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">source</span><span style="color:#B392F0"> srcset</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"image.jpg"</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"image/jpeg"</span><span style="color:#E1E4E8"> /></span></span>
 <span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">img</span><span style="color:#B392F0"> src</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"image.jpg"</span><span style="color:#B392F0"> alt</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Description"</span><span style="color:#E1E4E8"> /></span></span>
 <span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">picture</span><span style="color:#E1E4E8">></span></span></code></pre>
-<h3 id="lazy-loading">Lazy Loading</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">img</span><span style="color:#B392F0"> src</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"image.jpg"</span><span style="color:#B392F0"> loading</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"lazy"</span><span style="color:#B392F0"> alt</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Description"</span><span style="color:#E1E4E8"> /></span></span></code></pre>
-<h2 id="code-optimization">Code Optimization</h2>
-<h3 id="minification">Minification</h3>
-<p>Remove unnecessary characters from code:</p>
-<ul>
-<li>Whitespace</li>
-<li>Comments</li>
-<li>Line breaks</li>
-</ul>
-<h3 id="code-splitting">Code Splitting</h3>
-<p>Split your JavaScript into smaller chunks:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Using dynamic imports</span></span>
+          <h3 id="lazy-loading">Lazy Loading</h3>
+          <pre
+            class="astro-code github-dark"
+            style="background-color: #24292e; color: #e1e4e8; overflow-x: auto"
+            tabindex="0"
+            data-language="html"
+          ><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">img</span><span style="color:#B392F0"> src</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"image.jpg"</span><span style="color:#B392F0"> loading</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"lazy"</span><span style="color:#B392F0"> alt</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Description"</span><span style="color:#E1E4E8"> /></span></span></code></pre>
+          <h2 id="code-optimization">Code Optimization</h2>
+          <h3 id="minification">Minification</h3>
+          <p>Remove unnecessary characters from code:</p>
+          <ul>
+            <li>Whitespace</li>
+            <li>Comments</li>
+            <li>Line breaks</li>
+          </ul>
+          <h3 id="code-splitting">Code Splitting</h3>
+          <p>Split your JavaScript into smaller chunks:</p>
+          <pre
+            class="astro-code github-dark"
+            style="background-color: #24292e; color: #e1e4e8; overflow-x: auto"
+            tabindex="0"
+            data-language="javascript"
+          ><code><span class="line"><span style="color:#6A737D">// Using dynamic imports</span></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> module</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#F97583"> import</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"./module.js"</span><span style="color:#E1E4E8">);</span></span></code></pre>
-<h3 id="tree-shaking">Tree Shaking</h3>
-<p>Remove unused code:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// webpack.config.js</span></span>
+          <h3 id="tree-shaking">Tree Shaking</h3>
+          <p>Remove unused code:</p>
+          <pre
+            class="astro-code github-dark"
+            style="background-color: #24292e; color: #e1e4e8; overflow-x: auto"
+            tabindex="0"
+            data-language="javascript"
+          ><code><span class="line"><span style="color:#6A737D">// webpack.config.js</span></span>
 <span class="line"><span style="color:#79B8FF">module</span><span style="color:#E1E4E8">.</span><span style="color:#79B8FF">exports</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#E1E4E8">  mode: </span><span style="color:#9ECBFF">"production"</span><span style="color:#E1E4E8">,</span></span>
 <span class="line"><span style="color:#E1E4E8">  optimization: {</span></span>
 <span class="line"><span style="color:#E1E4E8">    usedExports: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
 <span class="line"><span style="color:#E1E4E8">  },</span></span>
 <span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
-<h2 id="caching-strategies">Caching Strategies</h2>
-<h3 id="browser-caching">Browser Caching</h3>
-<p>Set appropriate cache headers:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="nginx"><code><span class="line"><span style="color:#6A737D"># Nginx configuration</span></span>
+          <h2 id="caching-strategies">Caching Strategies</h2>
+          <h3 id="browser-caching">Browser Caching</h3>
+          <p>Set appropriate cache headers:</p>
+          <pre
+            class="astro-code github-dark"
+            style="background-color: #24292e; color: #e1e4e8; overflow-x: auto"
+            tabindex="0"
+            data-language="nginx"
+          ><code><span class="line"><span style="color:#6A737D"># Nginx configuration</span></span>
 <span class="line"><span style="color:#F97583">location</span><span style="color:#B392F0"> /static/ </span><span style="color:#E1E4E8">{</span></span>
 <span class="line"><span style="color:#F97583">    expires </span><span style="color:#E1E4E8">1y;</span></span>
 <span class="line"><span style="color:#F97583">    add_header </span><span style="color:#E1E4E8">Cache-Control </span><span style="color:#9ECBFF">"public, no-transform"</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
-<h3 id="service-worker-caching">Service Worker Caching</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// service-worker.js</span></span>
+          <h3 id="service-worker-caching">Service Worker Caching</h3>
+          <pre
+            class="astro-code github-dark"
+            style="background-color: #24292e; color: #e1e4e8; overflow-x: auto"
+            tabindex="0"
+            data-language="javascript"
+          ><code><span class="line"><span style="color:#6A737D">// service-worker.js</span></span>
 <span class="line"><span style="color:#E1E4E8">self.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"install"</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#E1E4E8">  event.</span><span style="color:#B392F0">waitUntil</span><span style="color:#E1E4E8">(</span></span>
 <span class="line"><span style="color:#E1E4E8">    caches.</span><span style="color:#B392F0">open</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"v1"</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">cache</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
@@ -96,43 +730,73 @@ connect
 <span class="line"><span style="color:#E1E4E8">    })</span></span>
 <span class="line"><span style="color:#E1E4E8">  );</span></span>
 <span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
-<h2 id="server-optimization">Server Optimization</h2>
-<h3 id="enable-compression">Enable Compression</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="nginx"><code><span class="line"><span style="color:#6A737D"># Nginx configuration</span></span>
+          <h2 id="server-optimization">Server Optimization</h2>
+          <h3 id="enable-compression">Enable Compression</h3>
+          <pre
+            class="astro-code github-dark"
+            style="background-color: #24292e; color: #e1e4e8; overflow-x: auto"
+            tabindex="0"
+            data-language="nginx"
+          ><code><span class="line"><span style="color:#6A737D"># Nginx configuration</span></span>
 <span class="line"><span style="color:#F97583">gzip </span><span style="color:#79B8FF">on</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#F97583">gzip_types </span><span style="color:#E1E4E8">text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;</span></span></code></pre>
-<h3 id="use-a-cdn">Use a CDN</h3>
-<p>Distribute content across multiple servers:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">script</span><span style="color:#B392F0"> src</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"https://cdn.example.com/script.js"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span></code></pre>
-<h2 id="performance-monitoring">Performance Monitoring</h2>
-<h3 id="tools">Tools</h3>
-<ul>
-<li>Google PageSpeed Insights</li>
-<li>WebPageTest</li>
-<li>Chrome DevTools Performance panel</li>
-<li>Lighthouse</li>
-</ul>
-<h3 id="real-user-monitoring-rum">Real User Monitoring (RUM)</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Basic performance monitoring</span></span>
+          <h3 id="use-a-cdn">Use a CDN</h3>
+          <p>Distribute content across multiple servers:</p>
+          <pre
+            class="astro-code github-dark"
+            style="background-color: #24292e; color: #e1e4e8; overflow-x: auto"
+            tabindex="0"
+            data-language="html"
+          ><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">script</span><span style="color:#B392F0"> src</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"https://cdn.example.com/script.js"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span></code></pre>
+          <h2 id="performance-monitoring">Performance Monitoring</h2>
+          <h3 id="tools">Tools</h3>
+          <ul>
+            <li>Google PageSpeed Insights</li>
+            <li>WebPageTest</li>
+            <li>Chrome DevTools Performance panel</li>
+            <li>Lighthouse</li>
+          </ul>
+          <h3 id="real-user-monitoring-rum">Real User Monitoring (RUM)</h3>
+          <pre
+            class="astro-code github-dark"
+            style="background-color: #24292e; color: #e1e4e8; overflow-x: auto"
+            tabindex="0"
+            data-language="javascript"
+          ><code><span class="line"><span style="color:#6A737D">// Basic performance monitoring</span></span>
 <span class="line"><span style="color:#E1E4E8">performance.</span><span style="color:#B392F0">mark</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"start"</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#6A737D">// ... your code ...</span></span>
 <span class="line"><span style="color:#E1E4E8">performance.</span><span style="color:#B392F0">mark</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"end"</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">performance.</span><span style="color:#B392F0">measure</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"operation"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"start"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"end"</span><span style="color:#E1E4E8">);</span></span></code></pre>
-<h2 id="mobile-optimization">Mobile Optimization</h2>
-<h3 id="optimize-touch-targets">Optimize Touch Targets</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#B392F0">.button</span><span style="color:#E1E4E8"> {</span></span>
+          <h2 id="mobile-optimization">Mobile Optimization</h2>
+          <h3 id="optimize-touch-targets">Optimize Touch Targets</h3>
+          <pre
+            class="astro-code github-dark"
+            style="background-color: #24292e; color: #e1e4e8; overflow-x: auto"
+            tabindex="0"
+            data-language="css"
+          ><code><span class="line"><span style="color:#B392F0">.button</span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#79B8FF">  min-width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">44</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#79B8FF">  min-height</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">44</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#79B8FF">  padding</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">12</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
-<h3 id="reduce-layout-shifts">Reduce Layout Shifts</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#B392F0">.image-container</span><span style="color:#E1E4E8"> {</span></span>
+          <h3 id="reduce-layout-shifts">Reduce Layout Shifts</h3>
+          <pre
+            class="astro-code github-dark"
+            style="background-color: #24292e; color: #e1e4e8; overflow-x: auto"
+            tabindex="0"
+            data-language="css"
+          ><code><span class="line"><span style="color:#B392F0">.image-container</span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#79B8FF">  aspect-ratio</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">16</span><span style="color:#E1E4E8">/</span><span style="color:#79B8FF">9</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#79B8FF">  background</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#f0f0f0</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
-<h2 id="build-process-optimization">Build Process Optimization</h2>
-<h3 id="asset-pipeline">Asset Pipeline</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// webpack.config.js</span></span>
+          <h2 id="build-process-optimization">Build Process Optimization</h2>
+          <h3 id="asset-pipeline">Asset Pipeline</h3>
+          <pre
+            class="astro-code github-dark"
+            style="background-color: #24292e; color: #e1e4e8; overflow-x: auto"
+            tabindex="0"
+            data-language="javascript"
+          ><code><span class="line"><span style="color:#6A737D">// webpack.config.js</span></span>
 <span class="line"><span style="color:#79B8FF">module</span><span style="color:#E1E4E8">.</span><span style="color:#79B8FF">exports</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#E1E4E8">  optimization: {</span></span>
 <span class="line"><span style="color:#E1E4E8">    splitChunks: {</span></span>
@@ -141,12 +805,75 @@ connect
 <span class="line"><span style="color:#E1E4E8">    },</span></span>
 <span class="line"><span style="color:#E1E4E8">  },</span></span>
 <span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
-<h3 id="critical-css">Critical CSS</h3>
-<p>Extract and inline critical CSS:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span>
+          <h3 id="critical-css">Critical CSS</h3>
+          <p>Extract and inline critical CSS:</p>
+          <pre
+            class="astro-code github-dark"
+            style="background-color: #24292e; color: #e1e4e8; overflow-x: auto"
+            tabindex="0"
+            data-language="html"
+          ><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span>
 <span class="line"><span style="color:#6A737D">  /* Critical CSS here */</span></span>
 <span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span></code></pre>
-<h2 id="conclusion">Conclusion</h2>
-<p>Performance optimization is an ongoing process. Regular monitoring and testing are essential to maintain optimal performance as your site evolves.</p>  </div> </article> </main> <footer class="bg-black text-white" data-astro-cid-sz7xmlte>
-&copy; 2025 Mike Navales. All rights reserved.
-<div class="social-links" data-astro-cid-sz7xmlte> <a href="https://github.com/mayknxyz" target="_blank" data-astro-cid-sz7xmlte> <span class="sr-only" data-astro-cid-sz7xmlte>Go to Mike's GitHub repo</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/github" data-astro-cid-sz7xmlte><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-sz7xmlte></path></svg> </a> <a href="https://www.linkedin.com/in/mikenavales" target="_blank" data-astro-cid-sz7xmlte> <span class="sr-only" data-astro-cid-sz7xmlte>Connect with Mike on LinkedIn</span> <svg viewBox="0 0 24 24" aria-hidden="true" width="32" height="32" astro-icon="social/linkedin" data-astro-cid-sz7xmlte><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" data-astro-cid-sz7xmlte></path></svg> </a> </div> </footer>  </body></html>
+          <h2 id="conclusion">Conclusion</h2>
+          <p>
+            Performance optimization is an ongoing process. Regular monitoring
+            and testing are essential to maintain optimal performance as your
+            site evolves.
+          </p>
+        </div>
+      </article>
+    </main>
+    <footer class="bg-black text-white" data-astro-cid-sz7xmlte>
+      &copy; 2025 Mike Navales. All rights reserved.
+      <div class="social-links" data-astro-cid-sz7xmlte>
+        <a
+          href="https://github.com/mayknxyz"
+          target="_blank"
+          data-astro-cid-sz7xmlte
+        >
+          <span class="sr-only" data-astro-cid-sz7xmlte
+            >Go to Mike's GitHub repo</span
+          >
+          <svg
+            viewBox="0 0 16 16"
+            aria-hidden="true"
+            width="32"
+            height="32"
+            astro-icon="social/github"
+            data-astro-cid-sz7xmlte
+          >
+            <path
+              fill="currentColor"
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+              data-astro-cid-sz7xmlte
+            ></path>
+          </svg>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/mikenavales"
+          target="_blank"
+          data-astro-cid-sz7xmlte
+        >
+          <span class="sr-only" data-astro-cid-sz7xmlte
+            >Connect with Mike on LinkedIn</span
+          >
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            width="32"
+            height="32"
+            astro-icon="social/linkedin"
+            data-astro-cid-sz7xmlte
+          >
+            <path
+              fill="currentColor"
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+              data-astro-cid-sz7xmlte
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>
