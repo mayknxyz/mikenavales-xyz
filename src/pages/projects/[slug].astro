@@ -1,0 +1,54 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+// Generate static paths for each project
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+// Get the project from props
+const { project } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`${project.data.title} | Mike Navales`} description={project.data.description} />
+  </head>
+  <body class="bg-black text-white">
+    <Header />
+    <main class="w-full bg-black">
+      <div class="max-w-[1920px] mx-auto px-2 py-8">
+        <section class="mb-12 px-2 text-center">
+          <h1 class="text-3xl md:text-4xl font-bold mb-4">{project.data.title}</h1>
+          <p class="text-base md:text-lg text-gray-300 mb-8">{project.data.description}</p>
+        </section>
+        <section class="px-2">
+          {project.data.image && (
+            <img src={project.data.image} alt={project.data.title} class="w-full rounded-lg mb-8" />
+          )}
+          {project.data.tags && (
+            <div class="flex flex-wrap gap-2 mb-8">
+              {project.data.tags.map((tag) => (
+                <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded-full text-xs">{tag}</span>
+              ))}
+            </div>
+          )}
+          {project.data.link && (
+            <a href={project.data.link} target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">
+              Visit Project
+            </a>
+          )}
+        </section>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
