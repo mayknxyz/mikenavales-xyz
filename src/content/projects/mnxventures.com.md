@@ -1,8 +1,10 @@
 ---
 title: 'mnxventures.com'
 description: 'Mike Navales Xtensions — One adVENTURE at a time'
-image: '/projects/images/automeyt-com-logo.png'
-tags: ['sample', 'project']
+image: '/projects/images/mnx.png'
+tags: 
+  - 'Astro'
+  - 'TailwindCSS'
 ---
 
-This is the content for Project Three.
+<!-- This is the content for the Project. -->

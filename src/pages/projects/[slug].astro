@@ -15,6 +15,13 @@ export async function getStaticPaths() {
 
 // Get the project from props
 const { project } = Astro.props;
+
+// Debug: Log the project data
+console.log('Project data:', {
+  id: project.id,
+  title: project.data.title,
+  tags: project.data.tags
+});
 ---
 
 <!doctype html>
