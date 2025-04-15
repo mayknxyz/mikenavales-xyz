@@ -11,7 +11,7 @@ import '../../styles/global.css';
 import '../../styles/tailwind.css';
 
 // Get current page from URL query parameter or default to 1
-const currentPage = Astro.url.searchParams.get('page') ? parseInt(Astro.url.searchParams.get('page')) : 1;
+const currentPage = Astro.url.searchParams.get('page') ? parseInt(Astro.url.searchParams.get('page') || '1') : 1;
 const postsPerPage = 20;
 
 // Get all posts and sort by date
@@ -204,13 +204,14 @@ const paginationUrls = {
 			tagButtons.forEach(btn => btn.classList.remove('active', 'bg-gray-800'));
 			button.classList.add('active', 'bg-gray-800');
 
-			const tag = button.dataset.tag;
+			const tag = (button as HTMLElement).dataset.tag || '';
 
 			blogPosts.forEach(post => {
 				if (tag === 'all') {
 					post.classList.remove('hidden');
 				} else {
-					const postTags = post.dataset.tags.split(' ');
+					const tagsAttr = (post as HTMLElement).dataset.tags || '';
+					const postTags = tagsAttr.split(' ');
 					if (postTags.includes(tag)) {
 						post.classList.remove('hidden');
 					} else {

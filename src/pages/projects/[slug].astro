@@ -32,7 +32,13 @@ const { project } = Astro.props;
         </section>
         <section class="px-2">
           {project.data.image && (
-            <img src={project.data.image} alt={project.data.title} class="w-full rounded-lg mb-8" />
+            <div class="flex justify-center mb-8">
+              <img 
+                src={project.data.image} 
+                alt={project.data.title} 
+                class="max-w-xl w-full rounded-lg shadow-lg bg-gray-900" 
+              />
+            </div>
           )}
           {project.data.tags && (
             <div class="flex flex-wrap gap-2 mb-8 justify-center">
