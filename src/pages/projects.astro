@@ -8,6 +8,13 @@ import '../styles/tailwind.css';
 import { getCollection } from 'astro:content';
 
 const projects = await getCollection('projects');
+
+// Debug: Log all projects to see their data
+console.log('All projects:', projects.map(project => ({
+	id: project.id,
+	title: project.data.title,
+	tags: project.data.tags
+})));
 ---
 
 <!doctype html>
